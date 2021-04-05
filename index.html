@@ -1,118 +1,153 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="프로젝트엔 장소 신청 설명서"/> 
-    <meta property="og:description" content="이곳에서 장소 신청 사용법을 볼 수 있습니다."/>
-    <meta property="og:image" content="https://https://wjpark11.github.io/pn_location_manual/pn_ci_img06.png"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <meta property="og:title" content="프로젝트엔 장소 신청 설명서" />
+    <meta property="og:description" content="이곳에서 장소 신청 사용법을 볼 수 있습니다." />
+    <meta property="og:image" content="https://https://wjpark11.github.io/pn_location_manual/pn_ci_img06.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
     <title>PROJECT-N 장소신청</title>
     <script src="data.js"></script>
 </head>
+
 <body>
-    <h1>PROJECT-N 장소신청 설명</h1>
-    <p>각 팀의 잔디 토픽내에서 장소 신청/조회/삭제를 할 수 있습니다.</p>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
+                    type="button" role="tab" aria-controls="home" aria-selected="true">장소신청</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">성과등록</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="location">
+                <h1>PROJECT-N 장소신청 설명</h1>
+                <p>각 팀의 잔디 토픽내에서 장소 신청/조회/삭제를 할 수 있습니다.</p>
 
-    <hr>
-    <h3 class="mb-5">장소신청</h3>
-    <ul>
-        <li class="mb-4"><p class="h5"><strong><mark>/장소 정기or추가/Charity/CT/SEB/사이트명/행정구역</mark></strong></p>형식으로 장소를 신청합니다.
-            <p><em>ex) /장소 정기/MSF/C/S/서울스퀘어/서울 중구 회현동</em></p>
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>/장소</mark></strong></p>
-            <p>장소 기능의 시동명령입니다. '/'를 앞에 붙여야합니다.</p>
-            <p>'/장소'만 입력하면 도움말이 표시됩니다.</p>
-        </li>
-        <li class="mb-4"><p class="h5"><strong><mark>정기 or 추가</mark></strong></p>
-            <p>/장소 이후 한 칸을 띄우고 작성합니다.</p>
-            <p>'정기'는 장소의 정기신청에, '추가'는 장소의 추가신청에 사용합니다.</p>
-            <p>어떤 주차의 정기/추가신청인지는 전적으로 신청시점에 따라 결정됩니다.</p>
-            <p>정기신청은 실제 업무주의 전전주 목요일 09:00부터 업무 전주 목요일 09:00까지 가능합니다.</p>
-            <p class="badge bg-primary text-wrap">* 업무 전주 목요일 09:00이후의 정기신청은 2주 후의 정기신청으로 처리됩니다.</p>
-            <p>추가신청은 업무 전주 일요일 자정부터 업무주 토요일 24:00까지 가능합니다.</p>
-            <p>다른 팀이 신청한 장소는 신청할 수 없습니다.</p>
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>Charity</mark></strong></p>
-            <p>업무 기관에따라 MSF, OXFAM, UNHCR 중 하나를 입력합니다.</p>
-            <p class="badge bg-primary text-wrap">* 대소문자에 상관없이 입력가능합니다.</p>            
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>CT</mark></strong></p>
-            <p>City의 경우 'C', Trip인 경우 'T'를 입력합니다.</p>
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>SEB</mark></strong></p>
-            <p>Street은 'S', Event는 'E', B2B는 'B'를 입력합니다.</p>
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>사이트명</mark></strong></p>
-            <p>장소 신청할 사이트를 카카오맵 장소명 기준으로 입력합니다.</p>
-        </li>
-        <li class="mb-4">
-            <p class="h5"><strong><mark>행정구역</mark></strong></p>
-            <p>신청 장소의 지번명을 읍/면/동 단위까지 입력합니다.</p>
-            <p>정확한 지번명을 입력해야 합니다. (카카오맵의 검색결과의 지번을 참고)</p>
-            <p>띄어쓰기는 신경쓰지 않아도 됩니다.</p>            
-            <p>지번명 목록은 다음과 같습니다.</p>
-            
-            <div class="row">
-                <div class="column col-sm-2 mb-4">            
-                    <select class="form-select" id="areaselect1">
-                        <option value = 0>All</option>   
-                        <option value = 1>서울</option>   
-                        <option value = 2>부산</option>
-                        <option value = 3>대구</option>
-                        <option value = 4>인천</option>
-                        <option value = 5>광주</option>
-                        <option value = 6>대전</option>
-                        <option value = 7>울산</option>
-                        <option value = 8>세종</option>
-                        <option value = 9>경기</option>
-                        <option value = 10>강원</option>
-                        <option value = 11>충북</option>
-                        <option value = 12>충남</option>
-                        <option value = 13>전북</option>
-                        <option value = 14>전남</option>
-                        <option value = 15>경북</option>
-                        <option value = 16>경남</option>
-                        <option value = 17>제주</option>
-                    </select> 
-                </div>
-                <div class="column col-sm-2 mb-4">
-                    <select class="form-select" id="areaselect2"></select>
-                </div>
-                <div class="column col-sm-4">
-                    <div id="areaselect3"></div>
-                </div>
+                <hr>
+                <h3 class="mb-5">장소신청</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/장소 정기or추가/Charity/CT/SEB/사이트명/행정구역</mark></strong></p>형식으로 장소를
+                        신청합니다.
+                        <p><em>ex) /장소 정기/MSF/C/S/서울스퀘어/서울 중구 회현동</em></p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/장소</mark></strong></p>
+                        <p>장소 기능의 시동명령입니다. '/'를 앞에 붙여야합니다.</p>
+                        <p>'/장소'만 입력하면 도움말이 표시됩니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>정기 or 추가</mark></strong></p>
+                        <p>/장소 이후 한 칸을 띄우고 작성합니다.</p>
+                        <p>'정기'는 장소의 정기신청에, '추가'는 장소의 추가신청에 사용합니다.</p>
+                        <p>어떤 주차의 정기/추가신청인지는 전적으로 신청시점에 따라 결정됩니다.</p>
+                        <p>정기신청은 실제 업무주의 전전주 목요일 09:00부터 업무 전주 목요일 09:00까지 가능합니다.</p>
+                        <p class="badge bg-primary text-wrap">* 업무 전주 목요일 09:00이후의 정기신청은 2주 후의 정기신청으로 처리됩니다.</p>
+                        <p>추가신청은 업무 전주 일요일 자정부터 업무주 토요일 24:00까지 가능합니다.</p>
+                        <p>다른 팀이 신청한 장소는 신청할 수 없습니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>Charity</mark></strong></p>
+                        <p>업무 기관에따라 MSF, OXFAM, UNHCR 중 하나를 입력합니다.</p>
+                        <p class="badge bg-primary text-wrap">* 대소문자에 상관없이 입력가능합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>CT</mark></strong></p>
+                        <p>City의 경우 'C', Trip인 경우 'T'를 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>SEB</mark></strong></p>
+                        <p>Street은 'S', Event는 'E', B2B는 'B'를 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>사이트명</mark></strong></p>
+                        <p>장소 신청할 사이트를 카카오맵 장소명 기준으로 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>행정구역</mark></strong></p>
+                        <p>신청 장소의 지번명을 읍/면/동 단위까지 입력합니다.</p>
+                        <p>정확한 지번명을 입력해야 합니다. (카카오맵의 검색결과의 지번을 참고)</p>
+                        <p>띄어쓰기는 신경쓰지 않아도 됩니다.</p>
+                        <p>지번명 목록은 다음과 같습니다.</p>
+
+                        <div class="row">
+                            <div class="column col-sm-2 mb-4">
+                                <select class="form-select" id="areaselect1">
+                                    <option value=0>All</option>
+                                    <option value=1>서울</option>
+                                    <option value=2>부산</option>
+                                    <option value=3>대구</option>
+                                    <option value=4>인천</option>
+                                    <option value=5>광주</option>
+                                    <option value=6>대전</option>
+                                    <option value=7>울산</option>
+                                    <option value=8>세종</option>
+                                    <option value=9>경기</option>
+                                    <option value=10>강원</option>
+                                    <option value=11>충북</option>
+                                    <option value=12>충남</option>
+                                    <option value=13>전북</option>
+                                    <option value=14>전남</option>
+                                    <option value=15>경북</option>
+                                    <option value=16>경남</option>
+                                    <option value=17>제주</option>
+                                </select>
+                            </div>
+                            <div class="column col-sm-2 mb-4">
+                                <select class="form-select" id="areaselect2"></select>
+                            </div>
+                            <div class="column col-sm-4">
+                                <div id="areaselect3"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <hr>
+                <h3 class="mb-5">장소조회</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/장소 조회</mark></strong></p>명령으로 신청/승인 현황을 조회합니다.
+                    </li>
+                    <li class="mb-4">각 주차별 우리팀이 신청한 장소와 승인현황이 조회됩니다.</li>
+                    <li class="mb-4">각 항목의 마지막에 나타나는 숫자는 신청장소 삭제시에 쓰이는 장소번호입니다.</li>
+                </ul>
+
+                <hr>
+                <h3 class="mb-5">장소삭제</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/장소 삭제/장소번호</mark></strong></p>명령으로 신청한 장소를 삭제합니다.
+                        <p><em>ex) /장소 삭제/7</em></p>
+                    </li>
+                    <li class="mb-4">이미 승인/거부된 장소는 삭제할 수 없습니다.</li>
+                    <li class="mb-4">우리 팀이 신청하지 않은 장소는 삭제할 수 없습니다.</li>
+
+                </ul>
             </div>
-        </li>
-    </ul>
 
-    <hr>
-    <h3 class="mb-5">장소조회</h3>
-    <ul>
-        <li class="mb-4"><p class="h5"><strong><mark>/장소 조회</mark></strong></p>명령으로 신청/승인 현황을 조회합니다.</li>
-        <li class="mb-4">각 주차별 우리팀이 신청한 장소와 승인현황이 조회됩니다.</li>
-        <li class="mb-4">각 항목의 마지막에 나타나는 숫자는 신청장소 삭제시에 쓰이는 장소번호입니다.</li>
-    </ul>
+            <div class="tab-pane fade" id="signup">
+                <h1>PROJECT-N 성과등록 설명</h1>
+                <p>전체방 잔디 토픽내에서 그날의 성과를 등록/수정/삭제할 수 있습니다.</p>
 
-    <hr>
-    <h3 class="mb-5">장소삭제</h3>
-    <ul>
-        <li class="mb-4"><p class="h5"><strong><mark>/장소 삭제/장소번호</mark></strong></p>명령으로 신청한 장소를 삭제합니다.
-            <p><em>ex) /장소 삭제/7</em></p>
-        </li>
-        <li class="mb-4">이미 승인/거부된 장소는 삭제할 수 없습니다.</li>
-        <li class="mb-4">우리 팀이 신청하지 않은 장소는 삭제할 수 없습니다.</li>
-        
-    </ul>
+                <hr>
+                <h3 class="mb-5">성과등록</h3>
+            </div>
+        </div>
+    </div>
 
-    
+
     <script src="selector.js"></script>
 </body>
 
