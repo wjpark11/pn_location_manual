@@ -22,11 +22,11 @@
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
-                    type="button" role="tab" aria-controls="home" aria-selected="true">장소신청</button>
+                    type="button" role="tab" aria-controls="location" aria-selected="true">장소신청</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false">성과등록</button>
+                    role="tab" aria-controls="signup" aria-selected="false">성과등록</button>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -139,10 +139,109 @@
 
             <div class="tab-pane fade" id="signup">
                 <h1>PROJECT-N 성과등록 설명</h1>
-                <p>전체방 잔디 토픽내에서 그날의 성과를 등록/수정/삭제할 수 있습니다.</p>
+                <p>전체방 잔디 토픽내에서 그날의 성과를 등록/조회/수정/삭제할 수 있습니다.</p>
 
                 <hr>
                 <h3 class="mb-5">성과등록</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/성과 등록/이름/기구/금액/구분/메모</mark></strong></p>형식으로 사인업을 등록합니다.
+                        <p><em>ex) /성과 등록/홍길동/msf/2만/정기/9챔 🔥🔥🔥🔥🔥🔥🔥🔥🔥</em></p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/성과</mark></strong></p>
+                        <p>성과등록 기능의 시동명령입니다. '/'를 앞에 붙여야합니다.</p>
+                        <p>'/성과'만 입력하면 도움말이 표시됩니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>등록</mark></strong></p>                        
+                        <p>/성과 이후 한 칸을 띄우고 작성합니다.</p>
+                        <p>당일의 성과만 등록할 수 있습니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>이름</mark></strong></p>                        
+                        <p>사인업을 받은 멤버의 이름을 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>기구</mark></strong></p>                        
+                        <p>MSF, OXFAM, UNHCR 중 하나를 입력합니다.</p>
+                        <p>대소문자는 구분하지 않습니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>금액</mark></strong></p>                        
+                        <p>사인업 금액을 입력합니다.</p>
+                        <p>1.5만, 2만, 5천 등의 문자 또는 10000, 5000 등의 숫자 형식으로 입력 가능합니다.</p>
+                        <p>숫자형식으로 입력 시 자리 구분 ","는 넣지 않습니다. <em>ex)20,000 과 같은 형식 X</em></p>
+                        <p>만원의 경우 "1만"과 같이 숫자 부분이 있어야 합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>구분</mark></strong></p>                        
+                        <p>사인업의 종류에 따라 정기, 계보, 카보, 선물, 파기 중 하나를 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>메모</mark></strong></p>                        
+                        <p>붙일 내용을 자유롭게 입력합니다. 이모티콘 가능</p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h3 class="mb-5">성과조회</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/성과 조회</mark></strong></p>명령으로 그날의 사인업 현황을 조회합니다.
+                        <p><em>ex) /성과 조회</em></p>
+                        <p>당일의 성과만 조회할 수 있습니다.</p>
+                        <p>성과 조회 시 각 항목의 일련번호 옆의 괄호 안에 있는 번호는 성과 수정/삭제 시 사용하는 <strong>등록번호</strong>입니다.</p>
+                    </li>                    
+                </ul>
+
+                <hr>
+
+                <h3 class="mb-5">성과수정</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/성과 수정/등록번호/항목/내용</mark></strong></p>형식으로 사인업을 수정합니다.
+                        <p><em>ex) /성과 수정/10/구분/정기</em> <- 등록번호 10번의 구분을 '정기'로 수정</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>수정</mark></strong></p>
+                        <p>/성과 이후 한 칸을 띄우고 작성합니다.</p>
+                        <p>당일의 성과만 수정할 수 있습니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>등록번호</mark></strong></p>
+                        <p>성과 조회 시 각 항목의 일련번호 옆의 괄호 안에 있는 번호입니다.</p>                        
+                        <p>수정할 성과의 등록번호를 입력합니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>항목</mark></strong></p>
+                        <p>수정할 항목에 따라 <strong>이름, 기구, 금액, 구분, 메모</strong> 중 하나를 입력합니다.</p>
+                        <p>한번에 하나의 항목만 수정할 수 있습니다.</p>
+                        <p>내가 등록하지 않은 성과도 수정 가능하므로 수정 전 충분히 주의를 기울여야 합니다.</p>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h3 class="mb-5">성과삭제</h3>
+                <ul>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>/성과 삭제/등록번호</mark></strong></p>형식으로 사인업을 삭제합니다.
+                        <p><em>ex) /성과 삭제/10</em></p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>삭제</mark></strong></p>
+                        <p>/성과 이후 한 칸을 띄우고 작성합니다.</p>
+                        <p>당일의 성과만 삭제할 수 있습니다.</p>
+                    </li>
+                    <li class="mb-4">
+                        <p class="h5"><strong><mark>등록번호</mark></strong></p>
+                        <p>성과 조회 시 각 항목의 일련번호 옆의 괄호 안에 있는 번호입니다.</p>                        
+                        <p>삭제할 성과의 등록번호를 입력합니다.</p>
+                        <p>내가 등록하지 않은 성과도 삭제 가능하므로 수정 전 충분히 주의를 기울여야 합니다.</p>
+                    </li>                    
+                </ul>
             </div>
         </div>
     </div>
