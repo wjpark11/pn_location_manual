@@ -1,3 +1,3 @@
-# PROJECT-N location apply user manual
+# PROJECT-N *location apply* and *signup register* user manual
 
 ###
